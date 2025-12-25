@@ -106,10 +106,29 @@ npm install
 ```
 This installs dependencies for both frontend and backend automatically.
 
-3. **Configure MongoDB**
-   - Create a MongoDB Atlas cluster (or use local MongoDB)
-   - Update `MONGO_URL` in `server/src/server.js` with your connection string
-   - Or set environment variable: `export MONGO_URL=your_connection_string`
+3. **Set up environment variables**
+
+   **IMPORTANT:** You must create `.env` files before starting the application!
+
+   **Server Setup:**
+   - Navigate to the `server` directory
+   - Create a `.env` file with the following content:
+   ```env
+   PORT=8000
+   MONGO_URL=mongodb+srv://username:password@cluster.mongodb.net/database
+   NODE_ENV=development
+   CLIENT_URL=http://localhost:3000
+   ```
+   - Replace `MONGO_URL` with your actual MongoDB connection string
+
+   **Client Setup:**
+   - Navigate to the `client` directory
+   - Create a `.env` file with the following content:
+   ```env
+   REACT_APP_API_URL=http://localhost:8000
+   ```
+
+   📖 **For detailed setup instructions, see [ENV_SETUP.md](./ENV_SETUP.md)**
 
 4. **Start the application**
 
@@ -236,12 +255,20 @@ The server will serve the built React app from `server/public`.
 
 ### Environment Variables
 
-For production, set these environment variables:
-```bash
-PORT=8000
-MONGO_URL=your_production_mongodb_url
-NODE_ENV=production
-```
+This project uses environment variables for configuration. See [ENV_SETUP.md](./ENV_SETUP.md) for detailed setup instructions.
+
+**Required for Server:**
+- `MONGO_URL` - MongoDB connection string (required)
+
+**Optional for Server:**
+- `PORT` - Server port (default: 8000)
+- `NODE_ENV` - Environment mode (default: development)
+- `CLIENT_URL` - Frontend URL for CORS (default: http://localhost:3000)
+
+**Optional for Client:**
+- `REACT_APP_API_URL` - Backend API URL (default: http://localhost:8000)
+
+⚠️ **Never commit `.env` files to Git!** They contain sensitive information.
 
 ## 🎓 Key Highlights
 
