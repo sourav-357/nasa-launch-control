@@ -23,6 +23,34 @@ This frontend provides an intuitive user experience for scheduling and managing 
 - **Arwes** - Sci-fi UI component library
 - **React Scripts** - Build tooling and dev server
 - **Custom Hooks** - Reusable stateful logic
+```
+
+## 📁 Project Structure
+
+```
+client/
+├── public/
+│   └── index.html              # HTML template
+├── src/
+│   ├── index.js                # React entry point
+│   ├── App.js                   # Root component with providers
+│   ├── settings.js              # Theme, sounds, and resources config
+│   ├── components/
+│   │   ├── Header.js            # Navigation header with links
+│   │   ├── Footer.js            # Footer with disclaimer
+│   │   ├── Centered.js          # Centered container component
+│   │   └── Clickable.js         # Clickable wrapper with sound
+│   ├── pages/
+│   │   ├── AppLayout.js         # Main layout with routing
+│   │   ├── Launch.js            # Launch scheduling form
+│   │   ├── Upcoming.js         # Upcoming launches table
+│   │   └── History.js           # Launch history table
+│   └── hooks/
+│       ├── usePlanets.js        # Hook to fetch planets
+│       ├── useLaunches.js       # Hook to manage launches
+│       └── requests.js          # API request functions
+└── package.json
+```
 
 ## 🚀 Getting Started
 
@@ -253,33 +281,6 @@ Sound effects enhance user experience:
 - State updates only when needed
 - Proper dependency arrays in hooks
 - Optimized re-render cycles
-
-## 📁 Project Structure
-
-```
-client/
-├── public/
-│   └── index.html              # HTML template
-├── src/
-│   ├── index.js                # React entry point
-│   ├── App.js                   # Root component with providers
-│   ├── settings.js              # Theme, sounds, and resources config
-│   ├── components/
-│   │   ├── Header.js            # Navigation header with links
-│   │   ├── Footer.js            # Footer with disclaimer
-│   │   ├── Centered.js          # Centered container component
-│   │   └── Clickable.js         # Clickable wrapper with sound
-│   ├── pages/
-│   │   ├── AppLayout.js         # Main layout with routing
-│   │   ├── Launch.js            # Launch scheduling form
-│   │   ├── Upcoming.js         # Upcoming launches table
-│   │   └── History.js           # Launch history table
-│   └── hooks/
-│       ├── usePlanets.js        # Hook to fetch planets
-│       ├── useLaunches.js       # Hook to manage launches
-│       └── requests.js          # API request functions
-└── package.json
-```
 
 ## 🐛 Troubleshooting
 

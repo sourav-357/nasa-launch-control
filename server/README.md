@@ -24,6 +24,32 @@ This backend API provides endpoints for managing space mission launches. It hand
 - **Mongoose** - Elegant MongoDB object modeling
 - **csv-parse** - Efficient CSV file parsing
 - **cors** - Cross-origin resource sharing middleware
+```
+
+## 📁 Project Structure
+
+```
+server/
+├── src/
+│   ├── server.js              # HTTP server setup & MongoDB connection
+│   ├── app.js                 # Express app configuration & middleware
+│   ├── models/
+│   │   ├── planets.model.js   # Planets business logic & CSV loading
+│   │   ├── planets.mongo.js   # Planets MongoDB schema
+│   │   ├── launches.model.js # Launches business logic
+│   │   └── launches.mongo.js # Launches MongoDB schema
+│   └── routes/
+│       ├── planets/
+│       │   ├── planets.router.js      # Planets route definitions
+│       │   └── planets.controller.js # Planets request handlers
+│       └── launches/
+│           ├── launches.router.js    # Launches route definitions
+│           └── launches.controller.js # Launches request handlers
+├── data/
+│   └── kepler_data.csv        # NASA Kepler exoplanet dataset
+├── public/                    # Built React frontend (generated)
+└── package.json
+```
 
 ## 🚀 Getting Started
 
@@ -225,32 +251,6 @@ Abort a launch by flight number.
     default: true
   }
 }
-```
-
-## 📁 Project Structure
-
-```
-server/
-├── src/
-│   ├── server.js              # HTTP server setup & MongoDB connection
-│   ├── app.js                 # Express app configuration & middleware
-│   ├── models/
-│   │   ├── planets.model.js   # Planets business logic & CSV loading
-│   │   ├── planets.mongo.js   # Planets MongoDB schema
-│   │   ├── launches.model.js # Launches business logic
-│   │   └── launches.mongo.js # Launches MongoDB schema
-│   └── routes/
-│       ├── planets/
-│       │   ├── planets.router.js      # Planets route definitions
-│       │   └── planets.controller.js # Planets request handlers
-│       └── launches/
-│           ├── launches.router.js    # Launches route definitions
-│           └── launches.controller.js # Launches request handlers
-├── data/
-│   └── kepler_data.csv        # NASA Kepler exoplanet dataset
-├── public/                    # Built React frontend (generated)
-└── package.json
-```
 
 ## 🔄 Data Flow
 

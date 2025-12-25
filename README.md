@@ -30,6 +30,39 @@ NASA Mission Control allows users to schedule, track, and manage space launches 
 **Backend:** Node.js, Express.js, MongoDB, Mongoose, csv-parse, cors  
 **Frontend:** React 17, React Router, Arwes UI, Custom Hooks
 
+## 📁 Project Structure
+
+```
+Part_09_NASA_Project/
+├── server/                      # Backend API
+│   ├── src/
+│   │   ├── server.js           # Entry point, HTTP server setup
+│   │   ├── app.js              # Express app configuration
+│   │   ├── models/             # Data models & business logic
+│   │   │   ├── planets.model.js
+│   │   │   ├── planets.mongo.js
+│   │   │   ├── launches.model.js
+│   │   │   └── launches.mongo.js
+│   │   └── routes/             # API routes & controllers
+│   │       ├── planets/
+│   │       └── launches/
+│   ├── data/
+│   │   └── kepler_data.csv     # NASA Kepler exoplanet data
+│   └── public/                 # Built React app (generated)
+│
+├── client/                      # Frontend React app
+│   ├── src/
+│   │   ├── index.js            # React entry point
+│   │   ├── App.js              # Root component
+│   │   ├── components/         # Reusable UI components
+│   │   ├── pages/              # Page components
+│   │   ├── hooks/              # Custom React hooks
+│   │   └── settings.js         # Theme & sound config
+│   └── public/                 # Static assets
+│
+└── package.json                # Root package config
+```
+
 ## 🏗 Architecture
 
 ```
@@ -117,39 +150,6 @@ npm run client
 - `DELETE /launches/:id` - Abort a launch by flight number
 
 See [server/README.md](./server/README.md) for detailed API documentation.
-
-## 📁 Project Structure
-
-```
-Part_09_NASA_Project/
-├── server/                      # Backend API
-│   ├── src/
-│   │   ├── server.js           # Entry point, HTTP server setup
-│   │   ├── app.js              # Express app configuration
-│   │   ├── models/             # Data models & business logic
-│   │   │   ├── planets.model.js
-│   │   │   ├── planets.mongo.js
-│   │   │   ├── launches.model.js
-│   │   │   └── launches.mongo.js
-│   │   └── routes/             # API routes & controllers
-│   │       ├── planets/
-│   │       └── launches/
-│   ├── data/
-│   │   └── kepler_data.csv     # NASA Kepler exoplanet data
-│   └── public/                 # Built React app (generated)
-│
-├── client/                      # Frontend React app
-│   ├── src/
-│   │   ├── index.js            # React entry point
-│   │   ├── App.js              # Root component
-│   │   ├── components/         # Reusable UI components
-│   │   ├── pages/              # Page components
-│   │   ├── hooks/              # Custom React hooks
-│   │   └── settings.js         # Theme & sound config
-│   └── public/                 # Static assets
-│
-└── package.json                # Root package config
-```
 
 ## 🔬 Habitable Planet Criteria
 
